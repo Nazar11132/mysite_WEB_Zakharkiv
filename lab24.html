@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta>
+    <title>Горизонтальне та вертикальне меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .horizontal-menu {
+            display: flex;
+            gap: 15px;
+            background-color: #333;
+            padding: 10px;
+        }
+        .horizontal-menu li {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .horizontal-menu li:hover {
+            background-color: #555;
+        }
+        .vertical-menu {
+            margin-top: 20px;
+            width: 200px;
+        }
+        .vertical-menu li {
+            padding: 10px 15px;
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .vertical-menu li:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Меню</h1>
+    <ul id="horizontal-menu" class="menu horizontal-menu"></ul>
+    <ul id="vertical-menu" class="menu vertical-menu"></ul>
+
+    <script>
+
+        const horizontalMenuItems = ["Головна", "Про нас", "Послуги", "Контакти"];
+        const verticalMenuItems = ["Профіль", "Налаштування", "Повідомлення", "Вихід"];
+
+        function createMenu(menuId, items) {
+            const menu = document.getElementById(menuId);
+            items.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                menu.appendChild(li);
+            });
+        }
+
+        createMenu("horizontal-menu", horizontalMenuItems);
+        createMenu("vertical-menu", verticalMenuItems);
+    </script>
+</body>
+</html>
